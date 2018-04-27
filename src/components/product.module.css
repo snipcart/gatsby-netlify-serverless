@@ -1,0 +1,40 @@
+.productFigure img {
+    border: solid 1px rebeccapurple;
+    border-radius: 50%;
+    padding: 1em;
+    width: 250px;
+}
+
+section {
+    clear: both;
+}
+
+.productFigure {
+    float: left;
+}
+
+.actions {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.buyButton {
+    border: none;
+    background-color: rebeccapurple;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.breadcrumb {
+    margin-top: -1em;
+    margin-bottom: 1em;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    font-size: smaller;
+    border-bottom: solid 1px rebeccapurple;
+    padding-bottom: 2px;
+}

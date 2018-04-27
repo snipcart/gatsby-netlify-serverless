@@ -1,0 +1,36 @@
+{
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^1.9.253",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-react-helmet": "^2.0.3",
+    "gatsby-source-filesystem": "^1.5.33",
+    "gatsby-transformer-remark": "^1.7.40",
+    "netlify-identity-widget": "^1.4.11",
+    "netlify-lambda": "^0.4.0",
+    "node-fetch": "^2.1.2",
+    "react-helmet": "^5.2.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "dev": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "gatsby-node-helpers": "^0.1.3",
+    "node-fetch": "^2.1.2",
+    "prettier": "^1.10.2",
+    "slash": "^1.0.0",
+    "slug": "^0.9.1"
+  }
+}
