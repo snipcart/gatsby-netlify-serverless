@@ -41,6 +41,22 @@ export default class Product extends React.Component {
 
         var formId = `product-${this.props.data.markdownRemark.frontmatter.sku}`
 
+        const button = this.props.data.markdownRemark.frontmatter.private ? (
+            <button type="button" className={`${styles.buyButton}`}>
+                SOLD OUT
+            </button>
+          ) : (
+            <button type="button" className={`${styles.buyButton} snipcart-add-item`}
+                data-item-name={this.props.data.markdownRemark.frontmatter.name}
+                data-item-id={this.props.data.markdownRemark.frontmatter.sku}
+                data-item-image={this.props.data.markdownRemark.frontmatter.image}
+                data-item-url={`${NETLIFY_URL}${this.props.location.pathname}`}
+                data-item-price={this.props.data.markdownRemark.frontmatter.price}
+                data-item-description={this.props.data.markdownRemark.frontmatter.desc}>
+                Buy it now for {this.props.data.markdownRemark.frontmatter.price}$
+            </button>
+          );
+
         return (
         <div>
             <h1>{this.props.data.markdownRemark.frontmatter.name}</h1>
@@ -58,15 +74,7 @@ export default class Product extends React.Component {
                     {this.props.data.markdownRemark.frontmatter.description}
                 </article>
                 <div className={styles.actions}>
-                    <button type="button" className={`${styles.buyButton} snipcart-add-item`}
-                        data-item-name={this.props.data.markdownRemark.frontmatter.name}
-                        data-item-id={this.props.data.markdownRemark.frontmatter.sku}
-                        data-item-image={this.props.data.markdownRemark.frontmatter.image}
-                        data-item-url={`${NETLIFY_URL}${this.props.location.pathname}`}
-                        data-item-price={this.props.data.markdownRemark.frontmatter.price}
-                        data-item-description={this.props.data.markdownRemark.frontmatter.desc}>
-                        Buy it now for {this.props.data.markdownRemark.frontmatter.price}$
-                    </button>
+                    {button}
                 </div>
             </section>
             <section>
