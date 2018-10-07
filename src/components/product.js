@@ -99,6 +99,7 @@ export default class Product extends React.Component {
           <figure className={styles.productFigure}>
             <img
               src={this.props.data.markdownRemark.frontmatter.image}
+              alt={this.props.data.markdownRemark.frontmatter.name}
             />
           </figure>
 
