@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
 import Header from './Header'
-import './index.css'
+import './layout.css'
 
 const TemplateWrapper = ({ children }) => (
   <div>
