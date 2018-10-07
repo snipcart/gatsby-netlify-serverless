@@ -1,7 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+
 import styles from './product.module.css'
 import fourOfour from './../pages/404.js'
+import Layout from './layout'
+
 const netlifyIdentity = require('netlify-identity-widget')
 
 const NETLIFY_FUNC =
@@ -85,7 +88,7 @@ export default class Product extends React.Component {
     )
 
     return (
-      <div>
+      <Layout>
         <h1>{this.props.data.markdownRemark.frontmatter.name}</h1>
         <div className={styles.breadcrumb}>
           <Link to="/">Back to the products</Link>
@@ -142,7 +145,7 @@ export default class Product extends React.Component {
             </button>
           </form>
         </section>
-      </div>
+      </Layout>
     )
   }
 }
