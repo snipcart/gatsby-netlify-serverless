@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import styles from './products.module.css'
+
+import Layout from '../components/layout'
+
 const netlifyIdentity = require('netlify-identity-widget')
 
 export default class Products extends React.Component {
@@ -32,7 +35,7 @@ export default class Products extends React.Component {
 
   render() {
     return (
-      <div>
+      <Layout>
         <h1>Products</h1>
         <div>
           To login use the email: geeks@snipcart.com with password:
@@ -69,7 +72,7 @@ export default class Products extends React.Component {
             </li>
           ))}
         </ul>
-      </div>
+      </Layout>
     )
   }
 }
