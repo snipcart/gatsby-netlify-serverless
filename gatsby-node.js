@@ -1,22 +1,22 @@
 const slash = require('slash')
 const path = require('path')
 
-exports.createPages = async ({graphql, boundActionCreators}) => {
-    const { createPage } = boundActionCreators
-    const productTemplate = path.resolve('src/components/product.js')
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const productTemplate = path.resolve('src/components/product.js')
 
-    return graphql(`
+  return graphql(`
     {
       allMarkdownRemark {
         edges {
           node {
             frontmatter {
-                sku,
-                loc,
-                price,
-                desc,
-                private,
-                name
+              sku
+              loc
+              price
+              desc
+              private
+              name
             }
           }
         }
@@ -24,7 +24,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
     }
   `).then(result => {
     if (result.errors) {
-      return Promise.reject(result.errors);
+      return Promise.reject(result.errors)
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -32,9 +32,9 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
         path: node.frontmatter.loc,
         component: slash(productTemplate),
         context: {
-            sku: node.frontmatter.sku
+          sku: node.frontmatter.sku
         }
-      });
-    });
-  });
+      })
+    })
+  })
 }
